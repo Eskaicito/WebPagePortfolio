@@ -278,7 +278,8 @@ section#morning,
 section#werewolf,
 section #dream,
 section#misterioso,
-section#cosmonauta {
+section#cosmonauta,
+section#davarion {
     color: #fff;
     padding: 80px 0;
     position: relative;
@@ -290,10 +291,12 @@ section#werewolf::before,
 section#misterioso::before,
 section#cosmonauta::before,
 section#dream::before,
+section#davarion::before,
 section#morning::after,
 section#werewolf::after,
 section#misterioso::after,
 section#dream::after,
+section#davarion::after,
 section#cosmonauta::after {
     content: "";
     position: absolute;
@@ -309,7 +312,8 @@ section#morning::before,
 section#werewolf::before,
 section#misterioso::before,
 section#cosmonauta::before,
-section#dream::before {
+section#dream::before,
+section#davarion::before {
     top: 0;
 }
 
@@ -317,7 +321,8 @@ section#morning::after,
 section#werewolf::after,
 section#misterioso::after,
 section#dream::after,
-section#cosmonauta::after {
+section#cosmonauta::after,
+section#davarion::after {
     bottom: 0;
 }
 
@@ -339,7 +344,8 @@ section#misterioso,
     box-shadow: 0 -10px 10px -10px rgba(255, 255, 255, 0.5);
 }
 
-section#dream {
+section#dream,
+#davarion {
     background-color: #000000;
     background-image: url(../assets/img/textura4.png);
     color: #fff;
@@ -350,7 +356,8 @@ section#morning h2,
 #misterioso h2,
 #dream h2,
 #werewolf h2,
-#cosmonauta h2 {
+#cosmonauta h2,
+#davarion h2 {
     font-size: 2em;
     color: #fff;
 }
@@ -360,7 +367,8 @@ section#morning .carousel-caption,
 #misterioso .carousel-caption,
 #dream .carousel-caption,
 #werewolf .carousel-caption,
-#cosmonauta .carousel-caption {
+#cosmonauta .carousel-caption,
+#davarion .carousel-caption {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -368,7 +376,8 @@ section#morning p,
 #misterioso p,
 #dream p,
 #werewolf p,
-#cosmonauta p {
+#cosmonauta p,
+#davarion p  {
     color: #fff;
 }
 
@@ -381,7 +390,8 @@ section#morning .btn-xl {
 #misterioso .round-box,
 #dream .round-box,
 #werewolf .round-box,
-#cosmonauta .round-box {
+#cosmonauta .round-box,
+#davarion .round-box {
     background: linear-gradient(135deg, #90a2ad79, #2c3e5039);
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -394,7 +404,8 @@ section#morning .btn-xl {
 #misterioso .round-box:hover,
 #dream .round-box:hover,
 #werewolf .round-box:hover,
-#cosmonauta .round-box:hover {
+#cosmonauta .round-box:hover
+#davarion .round-box:hover {
     transform: scale(1.05);
 }
 
