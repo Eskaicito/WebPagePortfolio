@@ -1,0 +1,642 @@
+header.masthead {
+    background-image: url('../assets/img/portfolio_cover.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header.masthead h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+header.masthead h3 {
+    font-size: 1.8em;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+header.masthead p {
+    font-size: 1.4em;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+header.masthead a.btn-primary {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    background-color: rgba(242, 146, 51, 1);
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header.masthead a.btn-primary:hover {
+    background-color: rgb(170, 103, 36);
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    background-color: #252525;
+    z-index: 1000;
+    width: 100%;
+    max-width: 100%;
+    /*background-image: url('/assets/img/textura.png');*/
+    background-repeat: repeat;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    width: 100%;
+    height: 45px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.navbar-nav-item {
+    margin-right: 20px;
+    font-size: medium;
+}
+
+.navbar-nav-item a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 1.2em;
+    font-weight: 100;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.navbar-nav-item a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #558C9D;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar-nav-item a:hover {
+    color: #558C9D;
+}
+
+.navbar-nav-item a:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+.position-relative {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(242, 146, 51, .6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.overlay-content {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-fluid:hover+.overlay,
+.overlay:hover {
+    opacity: 1;
+}
+
+.about-me-section {
+    background: radial-gradient(#3498db 5%, transparent 5%),
+        radial-gradient(#3498db 5%, transparent 5%);
+    background-position: 0 0, 20px 20px;
+    background-size: 40px 40px;
+    color: #ecf0f1;
+    padding: 60px 0;
+}
+
+.about-me-section h2 {
+    color: #3498db;
+    font-size: 3em;
+    font-weight: bold;
+
+}
+
+.about-me-section .lead {
+    font-size: 25px;
+    color: #ecf0f1;
+    line-height: 1.5;
+
+}
+
+
+.image-section img {
+    max-width: 100%;
+    border-radius: 260px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    border-width: thick;
+    border-color: #a0a0a0;
+    border-style: double;
+}
+
+.paddington {
+    padding: 20px;
+}
+
+.image-section img:hover {
+    transform: scale(1.1);
+}
+
+.highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 260px;
+    background: rgba(52, 152, 219, 0.8);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-section:hover .highlight-overlay {
+    opacity: 1;
+}
+
+.highlight-overlay-content {
+    text-align: center;
+}
+
+.highlight-overlay-content h3 {
+    color: #ecf0f1;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.highlight-overlay-content p {
+    color: #bdc3c7;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.arrow {
+    color: #ecf0f1;
+    font-size: 50px;
+}
+
+.social-media-section img {
+    max-width: 70px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media-section img:hover {
+    transform: scale(0.9);
+}
+
+.social-media-section p {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.social-media-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-media-section a:hover {
+    color: #3498db;
+}
+
+.portfolio {
+    background-image: url(../assets/img/textura5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section#morning,
+section#werewolf,
+section #dream,
+section#misterioso,
+section#cosmonauta {
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section#morning::before,
+section#werewolf::before,
+section#misterioso::before,
+section#cosmonauta::before,
+section#dream::before,
+section#morning::after,
+section#werewolf::after,
+section#misterioso::after,
+section#dream::after,
+section#cosmonauta::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 2;
+}
+
+section#morning::before,
+section#werewolf::before,
+section#misterioso::before,
+section#cosmonauta::before,
+section#dream::before {
+    top: 0;
+}
+
+section#morning::after,
+section#werewolf::after,
+section#misterioso::after,
+section#dream::after,
+section#cosmonauta::after {
+    bottom: 0;
+}
+
+
+
+section#morning,
+#werewolf {
+    background-color: #2c3e50;
+    background-image: url(../assets/img/textura2.png);
+    box-shadow: 0 10px 10px -10px rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section#misterioso,
+#cosmonauta {
+    background-color: rgba(33, 37, 41, 0.9);
+    background-image: url(../assets/img/textura3.png);
+    box-shadow: 0 -10px 10px -10px rgba(255, 255, 255, 0.5);
+}
+
+section#dream {
+    background-color: #000000;
+    background-image: url(../assets/img/textura4.png);
+    color: #fff;
+    padding: 80px 0;
+}
+
+section#morning h2,
+#misterioso h2,
+#dream h2,
+#werewolf h2,
+#cosmonauta h2 {
+    font-size: 2em;
+    color: #fff;
+}
+
+
+section#morning .carousel-caption,
+#misterioso .carousel-caption,
+#dream .carousel-caption,
+#werewolf .carousel-caption,
+#cosmonauta .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+section#morning p,
+#misterioso p,
+#dream p,
+#werewolf p,
+#cosmonauta p {
+    color: #fff;
+}
+
+section#morning .btn-xl {
+    background-color: rgba(242, 146, 51, 1);
+    color: #fff;
+}
+
+#morning .round-box,
+#misterioso .round-box,
+#dream .round-box,
+#werewolf .round-box,
+#cosmonauta .round-box {
+    background: linear-gradient(135deg, #90a2ad79, #2c3e5039);
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+#morning .round-box:hover,
+#misterioso .round-box:hover,
+#dream .round-box:hover,
+#werewolf .round-box:hover,
+#cosmonauta .round-box:hover {
+    transform: scale(1.05);
+}
+
+#morning .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/TMA/TMA_1.jpg');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+
+#misterioso .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/EMC/emc3.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+
+#dream .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/DREAM/dream1.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+
+#werewolf .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/WEREWOLF/wolf4.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+
+#cosmonauta .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/COSMONAUTA/cosmo2.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+
+.technologies-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.technology-box {
+    width: 150px;
+    height: 20px;
+    margin: 0 5px;
+    border: 1px solid #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500 !important;
+}
+
+.technology-box-secondary {
+    width: 120px;
+    height: 20px;
+    margin: 0 5px;
+    border: 1px solid #000000;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500 !important;
+}
+
+.custom-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 86, 92, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.custom-portfolio-item:hover .custom-overlay {
+    opacity: 1;
+}
+
+.custom-overlay-content h3 {
+    margin-bottom: 5px;
+}
+
+.custom-overlay-content p {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 100;
+}
+
+span {
+    font-style: italic;
+    font-size: large;
+    margin-bottom: 10px;
+    color: #bababa;
+    margin-top: 0;
+}
+
+.linkedin .social-card-content {
+    background: rgba(0, 119, 181, 0.8);
+}
+
+.github .social-card-content {
+    background: rgba(36, 36, 36, 0.8);
+}
+
+.itch .social-card-content {
+    background: rgba(179, 93, 16, 0.8);
+}
+
+.social-media-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.social-card {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-card:hover {
+    transform: scale(1.5);
+}
+
+.social-card:hover .social-card-content {
+    opacity: 1;
+}
+
+.social-card-content h4,
+.social-card-content p {
+    color: #fff;
+    margin: 0;
+    text-align: center;
+    font-weight: 200;
+}
+
+.footer {
+    background-color: #34495e;
+    padding: 30px 0;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.social-link i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.social-link:hover {
+    background-color: #2980b9;
+    transform: scale(1.2);
+}
+
+.text-muted {
+    color: #bdc3c7;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.text-muted:hover {
+    color: #ecf0f1;
+}
+
+.text-muted:active {
+    transform: translateY(2px);
+}
+
+.footer {
+    background-image: url(../assets/img/textura6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer h2 {
+    color: #fff;
+}
+
+.scroll-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.scroll-section.active,
+.scroll-section.active-near {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-section.active-near {
+    transition: opacity 0.8s, transform 0.8s;
+}
