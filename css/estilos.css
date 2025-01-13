@@ -279,7 +279,8 @@ section#werewolf,
 section #dream,
 section#misterioso,
 section#cosmonauta,
-section#davarion {
+section#davarion,
+section#nutcracker {
     color: #fff;
     padding: 80px 0;
     position: relative;
@@ -297,7 +298,9 @@ section#werewolf::after,
 section#misterioso::after,
 section#dream::after,
 section#davarion::after,
-section#cosmonauta::after {
+section#cosmonauta::after,
+section#nutcracker::after
+ {
     content: "";
     position: absolute;
     left: 0;
@@ -313,7 +316,8 @@ section#werewolf::before,
 section#misterioso::before,
 section#cosmonauta::before,
 section#dream::before,
-section#davarion::before {
+section#davarion::before,
+section#nutcracker::before {
     top: 0;
 }
 
@@ -322,14 +326,15 @@ section#werewolf::after,
 section#misterioso::after,
 section#dream::after,
 section#cosmonauta::after,
-section#davarion::after {
+section#davarion::after,
+section#nutcracker::after {
     bottom: 0;
 }
 
 
 
 section#morning,
-#werewolf {
+#werewolf{
     background-color: #2c3e50;
     background-image: url(../assets/img/textura2.png);
     box-shadow: 0 10px 10px -10px rgba(255, 255, 255, 0.5);
@@ -338,7 +343,8 @@ section#morning,
 }
 
 section#misterioso,
-#cosmonauta {
+#cosmonauta,
+#nutcracker  {
     background-color: rgba(33, 37, 41, 0.9);
     background-image: url(../assets/img/textura3.png);
     box-shadow: 0 -10px 10px -10px rgba(255, 255, 255, 0.5);
@@ -357,7 +363,8 @@ section#morning h2,
 #dream h2,
 #werewolf h2,
 #cosmonauta h2,
-#davarion h2 {
+#davarion h2,
+#nutcracker h2  {
     font-size: 2em;
     color: #fff;
 }
@@ -368,7 +375,8 @@ section#morning .carousel-caption,
 #dream .carousel-caption,
 #werewolf .carousel-caption,
 #cosmonauta .carousel-caption,
-#davarion .carousel-caption {
+#davarion .carousel-caption,
+#nutcracker .carousel-caption {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -377,7 +385,8 @@ section#morning p,
 #dream p,
 #werewolf p,
 #cosmonauta p,
-#davarion p  {
+#davarion p,
+#nutcracker p {
     color: #fff;
 }
 
@@ -391,7 +400,8 @@ section#morning .btn-xl {
 #dream .round-box,
 #werewolf .round-box,
 #cosmonauta .round-box,
-#davarion .round-box {
+#davarion .round-box,
+#nutcracker .round-box {
     background: linear-gradient(135deg, #90a2ad79, #2c3e5039);
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -404,8 +414,9 @@ section#morning .btn-xl {
 #misterioso .round-box:hover,
 #dream .round-box:hover,
 #werewolf .round-box:hover,
-#cosmonauta .round-box:hover
-#davarion .round-box:hover {
+#cosmonauta .round-box:hover,
+#davarion .round-box:hover,
+#nutcracker .round-box:hover {
     transform: scale(1.05);
 }
 
@@ -464,6 +475,27 @@ section#morning .btn-xl {
     background-size: cover;
 }
 
+
+#davarion .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/DAVARION/dav1.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+#nutcracker .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/NUTCRAKER/nut2.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
 .technologies-section {
     display: flex;
     justify-content: center;
