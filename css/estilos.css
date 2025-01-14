@@ -280,7 +280,9 @@ section #dream,
 section#misterioso,
 section#cosmonauta,
 section#davarion,
-section#nutcracker {
+section#nutcracker,
+section#tears,
+section#condotiero {
     color: #fff;
     padding: 80px 0;
     position: relative;
@@ -291,6 +293,8 @@ section#morning::before,
 section#werewolf::before,
 section#misterioso::before,
 section#cosmonauta::before,
+section#condotiero::before,
+section#tears::before,
 section#dream::before,
 section#davarion::before,
 section#morning::after,
@@ -299,7 +303,10 @@ section#misterioso::after,
 section#dream::after,
 section#davarion::after,
 section#cosmonauta::after,
-section#nutcracker::after
+section#tears::after,
+section#nutcracker::after,
+section#condotiero::after 
+
  {
     content: "";
     position: absolute;
@@ -317,7 +324,9 @@ section#misterioso::before,
 section#cosmonauta::before,
 section#dream::before,
 section#davarion::before,
-section#nutcracker::before {
+section#nutcracker::before,
+section#tears::before,
+section#condotiero::before {
     top: 0;
 }
 
@@ -327,14 +336,17 @@ section#misterioso::after,
 section#dream::after,
 section#cosmonauta::after,
 section#davarion::after,
-section#nutcracker::after {
+section#nutcracker::after,
+section#tears::after,
+section#condotiero::after {
     bottom: 0;
 }
 
 
 
 section#morning,
-#werewolf{
+#werewolf,
+#condotiero{
     background-color: #2c3e50;
     background-image: url(../assets/img/textura2.png);
     box-shadow: 0 10px 10px -10px rgba(255, 255, 255, 0.5);
@@ -351,7 +363,8 @@ section#misterioso,
 }
 
 section#dream,
-#davarion {
+#davarion,
+#tears {
     background-color: #000000;
     background-image: url(../assets/img/textura4.png);
     color: #fff;
@@ -363,7 +376,9 @@ section#morning h2,
 #dream h2,
 #werewolf h2,
 #cosmonauta h2,
+#condotiero h2,
 #davarion h2,
+#tears h2,
 #nutcracker h2  {
     font-size: 2em;
     color: #fff;
@@ -375,7 +390,9 @@ section#morning .carousel-caption,
 #dream .carousel-caption,
 #werewolf .carousel-caption,
 #cosmonauta .carousel-caption,
+#condotiero .carousel-caption,
 #davarion .carousel-caption,
+#tears .carousel-caption,
 #nutcracker .carousel-caption {
     background-color: rgba(0, 0, 0, 0.9);
 }
@@ -386,6 +403,8 @@ section#morning p,
 #werewolf p,
 #cosmonauta p,
 #davarion p,
+#condotiero p,
+#tears p,
 #nutcracker p {
     color: #fff;
 }
@@ -401,6 +420,8 @@ section#morning .btn-xl {
 #werewolf .round-box,
 #cosmonauta .round-box,
 #davarion .round-box,
+#condotiero .round-box,
+#tears .round-box,
 #nutcracker .round-box {
     background: linear-gradient(135deg, #90a2ad79, #2c3e5039);
     border-radius: 15px;
@@ -416,7 +437,9 @@ section#morning .btn-xl {
 #werewolf .round-box:hover,
 #cosmonauta .round-box:hover,
 #davarion .round-box:hover,
-#nutcracker .round-box:hover {
+#nutcracker .round-box:hover,
+#tears .round-box:hover,
+#condotiero .round-box:hover {
     transform: scale(1.05);
 }
 
@@ -492,6 +515,28 @@ section#morning .btn-xl {
     width: 100%;
     height: 100%;
     background-image: url('/assets/img/NUTCRAKER/nut2.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+
+#condotiero .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/CONDOTIERO/con1.png');
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: cover;
+}
+
+#tears .round-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/TEARS/t1.png');
     opacity: 0.1;
     pointer-events: none;
     background-size: cover;
