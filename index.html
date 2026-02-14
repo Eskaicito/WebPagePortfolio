@@ -1,1443 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Nicolás Saldeño Portfolio</title>
-    <!-- Favicon-->
+    <meta name="description" content="Nicolás Saldeño - Game Development Portfolio" />
+    <meta name="author" content="Nicolás Saldeño" />
+    <title>Nicolás Saldeño - Game Developer</title>
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/ENE.ico" />
-    <!-- Font Awesome icons (free version)-->
+    
+    <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <!-- Simple line icons-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Google fonts-->
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-        rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link href="css/estilos.css" rel="stylesheet" />
 </head>
 
-<body id="page-top">
-    <!------------------------------------------------- NAVEGACION MENU-------------------------------------------------------------------------->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
-        <div class="container-fluid navbar-container">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
-            </ul>
-        </div>
+<body>
+    <!-- Canvas de fondo animado -->
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Navegación principal -->
+    <nav id="main-nav">
+        <button class="nav-arrow nav-prev" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow nav-next" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </nav>
-    <!--------------------------------------------------------- HEADER --------------------------------------------------------------------->
-    <header class="masthead d-flex align-items-center text-bg-primary">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="col-lg-6">
-                <h1 class="display-3 mb-1" style="font-family: 'Arial', sans-serif; font-weight: bold;">NICOLÁS SALDEÑO
-                </h1>
-                <p class="lead mb-1 text-light">Game Development Student at Universidad Argentina de la Empresa</p>
-                <p class="mb-4 text-light">Welcome to my creative world!</p>
-                <div class="cta-buttons mt-1">
-                    <a class="btn btn-primary btn-lg me-3" href="#about">About Me</a>
-                </div>
 
-            </div>
-            <div class=" col-lg-6 d-flex justify-content-center mb-4 social-media-section">
-                <!-- LinkedIn -->
-                <div>
-                    <a href="https://www.linkedin.com/in/nicolas-salde%C3%B1o-ba8119206/" target="_blank"
-                        class="text-decoration-none">
-                        <div class="social-card linkedin">
-                            <img src="assets/logos/linkedin.webp" alt="LinkedIn" class="img-fluid">
-                        </div>
-                    </a>
-                </div>
+    <!-- Contador de slides -->
+    <div id="slide-counter">
+        <span id="current-slide">01</span> / <span id="total-slides">12</span>
+    </div>
 
-                <!-- GitHub -->
-                <div>
-                    <a href="https://github.com/Eskaicito" target="_blank" class="text-decoration-none">
-                        <div class="social-card github">
-                            <img src="assets/logos/github.png" alt="GitHub" class="img-fluid">
-                        </div>
-                    </a>
-                </div>
-
-                <!-- itch.io -->
-                <div>
-                    <a href="https://eskaicito.itch.io/" target="_blank" class="text-decoration-none">
-                        <div class="social-card itch">
-                            <img src="assets/logos/itchio.png" alt="itch.io" class="img-fluid">
-                        </div>
-                    </a>
+    <!-- Container principal de slides -->
+    <div id="slider-container">
+        
+        <!-- ============================================ -->
+        <!-- SLIDE 1: HOME -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="1">
+            <div class="slide-content home-slide">
+                <div class="home-centered">
+                    <h1 class="main-title">NICOLÁS<br>SALDEÑO</h1>
+                    <p class="subtitle">Game Development Student</p>
+                    <p class="description">Universidad Argentina de la Empresa</p>
+                    <p class="welcome">Welcome to my creative world!</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/nicolas-salde%C3%B1o-ba8119206/" target="_blank" class="social-card">
+                            <img src="assets/logos/linkedin.webp" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/Eskaicito" target="_blank" class="social-card">
+                            <img src="assets/logos/github.png" alt="GitHub">
+                        </a>
+                        <a href="https://eskaicito.itch.io/" target="_blank" class="social-card">
+                            <img src="assets/logos/itchio.png" alt="itch.io">
+                        </a>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 2: ABOUT ME -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content about-slide">
+                <h2 class="slide-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead">I'm a third-year student in Game Development at the Universidad Argentina de la Empresa (UADE).</p>
+                        <p>From a passion for video games to a strong foundation in creative, practical, and leadership skills, I've played diverse roles in game design, programming, and art through various academic projects.</p>
+                        <div class="skills-highlight">
+                            <div class="skill-tag">Game Design</div>
+                            <div class="skill-tag">Scriptwriting</div>
+                            <div class="skill-tag">Art Direction</div>
+                            <div class="skill-tag">Production</div>
+                        </div>
+                    </div>
+                    <div class="about-image-circular">
+                        <div class="profile-image">
+                            <img src="assets/img/me.jpg" alt="Nicolás Saldeño">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 3: THE MORNING AFTER -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <iframe src="https://www.youtube.com/embed/7QN3X47l7Lc" allowfullscreen></iframe>
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/TMA/TMA_1.jpg" alt="The Morning After">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/TMA/TMA_2.jpg" alt="The Morning After">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/TMA/TMA_3.jpg" alt="The Morning After">
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">The Morning After</h2>
+                        <div class="project-brief">
+                            <p>Satirical third-person shooter zombie game made for Global Game Jam 2024.</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>In the development process, I served as a scriptwriter and dialogue editor, performed voice acting for the entire game, and utilized my talent as a designer to create covers, logos, backgrounds, and more. I was also responsible for the complete editing of the trailer.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Unreal Engine 5</span>
+                                <span class="tech">Audacity</span>
+                                <span class="tech">ElevenLabs</span>
+                                <span class="tech">CapCut</span>
+                                <span class="tech">Photoshop</span>
+                            </div>
+                            
+                            <div class="project-links">
+                                <a href="https://santiagomastroberti.itch.io/the-morning-after" target="_blank" class="btn-primary">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=7QN3X47l7Lc" target="_blank" class="btn-secondary">
+                                    <i class="fas fa-play"></i> Trailer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 4: EL MISTERIOSO CASO -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/EMC/emc1.png" alt="El Misterioso Caso">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/EMC/emc2.png" alt="El Misterioso Caso">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/EMC/emc3.png" alt="El Misterioso Caso">
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">El Misterioso Caso de Marcos y Elficticio</h2>
+                        <p class="project-subtitle">The Mysterious Case of Marcos and Elficticio</p>
+                        <div class="project-brief">
+                            <p>Visual novel inspired by Robert Louis Stevenson's "Dr Jekyll and Mr Hyde"</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>Led as the lead game designer for a youth mystery visual novel. Managed diverse tasks, including reading and adapting the classic, scripting the novel, and contributing to Game Design (worldbuilding, mechanics, pitching, documentation) and Production (team organization, task management).</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Ren'Py Engine</span>
+                                <span class="tech">Photoshop</span>
+                                <span class="tech">Celtx</span>
+                            </div>
+                            
+                            <div class="project-links">
+                                <a href="assets/docs/EL_MISTERIOSO_CASO_GUION_LITERARIO.pdf" target="_blank" class="btn-primary">
+                                    <i class="fas fa-file-pdf"></i> Read Script
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 5: THE DREAM -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/DREAM/dream1.png" alt="The Dream">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/DREAM/dream2.png" alt="The Dream">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/DREAM/dream3.png" alt="The Dream">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/DREAM/dream4.png" alt="The Dream">
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">The Dream</h2>
+                        <div class="project-brief">
+                            <p>2D top-down horror adventure with puzzle-solving elements</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>Led the production and served as the lead game designer. Took on multifaceted responsibilities, including narrative and level design, mechanics, pitching, and crafting the Game Design Document. Played a pivotal role in development, contributing significantly to programming and shaping the game's artistic direction.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Unity 3.16</span>
+                                <span class="tech">Photoshop</span>
+                                <span class="tech">Visual Studio</span>
+                            </div>
+                            
+                            <div class="project-links">
+                                <a href="#" class="btn-primary">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 6: THE GIRL WHO CRIED WEREWOLF -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/WEREWOLF/wolf1.png" alt="The Girl Who Cried Werewolf">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/WEREWOLF/wolf2.png" alt="The Girl Who Cried Werewolf">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/WEREWOLF/wolf4.png" alt="The Girl Who Cried Werewolf">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/WEREWOLF/wolf5.png" alt="The Girl Who Cried Werewolf">
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">The Girl Who Cried Werewolf</h2>
+                        <div class="project-brief">
+                            <p>2D top-down horror adventure with UX/UI focus</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>Led UX/UI design for this project. Responsible for prototyping screens, crafting the logo, and designing the Wolf character with animations. Key contributions include shaping the game's core concept and influencing its artistic direction.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Photoshop</span>
+                                <span class="tech">Illustrator</span>
+                                <span class="tech">Figma</span>
+                            </div>
+                            
+                            <div class="project-links">
+                                <a href="https://www.figma.com/file/cjxD9vQIhSqCceD6E2GsTX/WireFrame%2F-The_Girl_Who_Cried_Werewolf" target="_blank" class="btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> View Designs
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 7: EL COSMONAUTA -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/COSMONAUTA/cosmo.png" alt="El Cosmonauta">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/COSMONAUTA/cosmo1.png" alt="El Cosmonauta">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/COSMONAUTA/cosmo2.png" alt="El Cosmonauta">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/COSMONAUTA/cosmo3.png" alt="El Cosmonauta">
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">El Cosmonauta</h2>
+                        <p class="project-subtitle">The Cosmonaut</p>
+                        <div class="project-brief">
+                            <p>3D third-person shooter in a space-themed futuristic sci-fi world</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>Design prototype for a futuristic game. I took on the role of Lead Game Designer, overseeing tasks such as narrative conception, worldbuilding, game design document writing, mechanics conception. I also took charge of a significant portion of the game's artistic aspects, designing the logo, posters, part of the conceptual art, and much more.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Trello</span>
+                                <span class="tech">Photoshop</span>
+                                <span class="tech">Illustrator</span>
+                                <span class="tech">Google Docs</span>
+                            </div>
+                            
+                            <div class="project-links">
+                                <a href="assets/docs/pitch_el_cosmonauta.pptx" class="btn-primary">
+                                    <i class="fas fa-file-powerpoint"></i> Game Pitch
+                                </a>
+                                <a href="assets/docs/game_treatment_el_cosmonauta.pdf" target="_blank" class="btn-secondary">
+                                    <i class="fas fa-file-pdf"></i> GDD
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 8: DAVARION -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/DAVARION/dav1.png" alt="Davarion">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/DAVARION/dav2.png" alt="Davarion">
+                            </div>
+                            <div class="media-item">
+                                <iframe src="https://www.youtube.com/embed/5nTsUOeRyOA" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">Davarion</h2>
+                        <div class="project-brief">
+                            <p>Turn-based card combat game with live action cinematics</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>I took on the role of Lead Game Designer and Producer, overseeing tasks such as narrative conception, scriptwriting, worldbuilding, game design document writing, mechanics conception. Similarly, I took charge of direction and production of all cinematics in the game.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Unity 3.22</span>
+                                <span class="tech">Photoshop</span>
+                                <span class="tech">Trello</span>
+                                <span class="tech">Google Docs</span>
+                            </div>
+                            
+                            <div class="project-links">
+                                <a href="https://eskaicito.itch.io/davarion" target="_blank" class="btn-primary">
+                                    <i class="fas fa-download"></i> Download Game
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 9: NUTCRACKER NOCTURNE -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/NUTCRAKER/nut2.png" alt="Nutcracker Nocturne">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/NUTCRAKER/nut1.png" alt="Nutcracker Nocturne">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/NUTCRAKER/nu2.png" alt="Nutcracker Nocturne">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/NUTCRAKER/nut3.png" alt="Nutcracker Nocturne">
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">Nutcracker: Nocturne</h2>
+                        <div class="project-brief">
+                            <p>Souls-like prototype based on Tchaikovsky's ballet</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>Made in Unreal Engine 5, based on the famous ballet The Nutcracker. In this project, I took the role of lead game designer, and got heavily involved in production, narrative, level design and documentation. Also, I made the 3D models for both the nutcracker and the enemies in the game, the rats.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Unreal Engine 5</span>
+                                <span class="tech">Blender</span>
+                                <span class="tech">Google Docs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 10: IL CONDOTTIERO -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/CONDOTIERO/con1.png" alt="Il Condottiero">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/CONDOTIERO/con2.png" alt="Il Condottiero">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/CONDOTIERO/con3.png" alt="Il Condottiero">
+                            </div>
+                            <div class="media-item">
+                                <iframe src="https://www.youtube.com/embed/u7nRUILH0Xc" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">Il Condottiero</h2>
+                        <div class="project-brief">
+                            <p>Metroidvania prototype with baroque style and live action cinematics</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>Set in a baroque style world with live action cinematics. Led the team as the producer and lead game designer. Worked in various areas, including narrative design, mechanic design and documentation. In addition, I served as the director, producer and scriptwriter for all cinematics.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Unity</span>
+                                <span class="tech">Visual Studio</span>
+                                <span class="tech">Google Docs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 11: TEARS IN THE RAIN -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="11">
+            <div class="slide-content project-slide">
+                <div class="project-grid">
+                    <div class="project-media">
+                        <div class="media-carousel">
+                            <div class="media-item active">
+                                <img src="assets/img/TEARS/t1.png" alt="Tears in the Rain">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/TEARS/t2.png" alt="Tears in the Rain">
+                            </div>
+                            <div class="media-item">
+                                <img src="assets/img/TEARS/t3.png" alt="Tears in the Rain">
+                            </div>
+                            <div class="media-item">
+                                <iframe src="https://www.youtube.com/embed/08y4dME4iFc" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="media-nav">
+                            <button class="media-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="media-dots"></div>
+                            <button class="media-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h2 class="project-title">Lágrimas en la Lluvia</h2>
+                        <p class="project-subtitle">Tears in the Rain</p>
+                        <div class="project-brief">
+                            <p>PS1-stylized walking simulator based on Blade Runner</p>
+                            <button class="expand-btn">View More <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p>Walking Simulator experience stylized as in PS1, based on the 1982 sci fi classic Blade Runner. As a producer and lead game designer, I took responsibility in all areas of design: narrative design, mechanic design, and UX design. Also, was the developer of the first level of the game in its entirety.</p>
+                            
+                            <div class="tech-stack">
+                                <span class="tech">Unity</span>
+                                <span class="tech">Photoshop</span>
+                                <span class="tech">Google Docs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 12: GALLERY & CONTACT -->
+        <!-- ============================================ -->
+        <section class="slide" data-slide="12">
+            <div class="slide-content gallery-slide">
+                <h2 class="slide-title">Other Projects & Contact</h2>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="assets/img/OTHER/saknes2.png" alt="Saknes">
+                        <div class="gallery-info">
+                            <h4>Saknes</h4>
+                            <p>GGJ 2023 - 2D Platformer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="assets/img/OTHER/evandros3.png" alt="Evandros Journey">
+                        <div class="gallery-info">
+                            <h4>Evandros Journey</h4>
+                            <p>Divine Comedy inspired</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="assets/img/VENICE/venice4.png" alt="Tale of Libertas">
+                        <div class="gallery-info">
+                            <h4>Tale of Libertas</h4>
+                            <p>15th-century Venice RPG</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="assets/img/OTHER/render10warrior.jpg" alt="Blender Project">
+                        <div class="gallery-info">
+                            <h4>3D Sci-Fi Character</h4>
+                            <p>Blender modeling</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-section">
+                    <h3>Let's Connect</h3>
+                    <div class="contact-links">
+                        <a href="https://twitter.com/N7Bard" target="_blank" class="contact-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicolas-salde%C3%B1o-ba8119206/" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Eskaicito" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://eskaicito.itch.io/" target="_blank" class="contact-link">
+                            <i class="fab fa-itch-io"></i>
+                        </a>
+                    </div>
+                    <p class="copyright">© 2024 Nicolás Saldeño</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navegación por thumbnails -->
+    <div id="thumbnail-nav">
+        <div class="thumbnail" data-slide="1">
+            <span>Home</span>
         </div>
-    </header>
-
-
-
-    <!----------------------------------------------------------  SOBRE MI ----------------------------------------------------------------->
-    <section class="content-section portfolio" id="about">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-4 gx-lg-5 justify-content-center about-me-section">
-                <div class="col-lg-10 scroll-section " data-aos="fade-up">
-                    <h2 class="text-primary">About Me</h2>
-                    <p class="lead mb-5">
-                        I'm a third-year student in Game Development at the Universidad Argentina de la Empresa (UADE). From a
-                        passion for video games to a strong foundation in creative, practical, and leadership skills,
-                        I've
-                        played diverse roles in game design, programming, and art through various academic projects.
-                    </p>
-                    <div class="row justify-content-center mb-4 image-section">
-                        <div class="col-md-6">
-                            <div class="position-relative">
-                                <img src="/assets/img/me.jpg" alt="Your Photo" class="img-fluid w-100">
-                                <div class="highlight-overlay" onclick="window.location.href='#portfolio'">
-                                    <div class="highlight-overlay-content">
-                                        <h3 class="text-light mb-3">Explore My Work</h3>
-                                        <p class="text-secondary">Find out more about the projects I've worked on.</p>
-                                        <span class="arrow">&#8595;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="2">
+            <span>About</span>
         </div>
-    </section>
-
-
-    <!---------------------------------------------------PROYECTOS --------------------------------------------------------------------->
-
-    <section class="content-section bg-primary text-bg-primary " id="portfolio">
-        <div class="container px-4 px-lg-5">
-            <div class="content-section-heading text-center">
-                <h3 class="text-primary mb-0">Portfolio</h3>
-                <h2 class="mb-1">My Projects</h2>
-                <span class="mb-7">All projects I have worked on</span>
-                <br></br>
-            </div>
-            <div class="row gx-0">
-
-                <!--------------------------------------------MORNING AFTER -------------------------------------------------------------->
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/TMA/posterTMA.png" alt="..." />
-                        <a class="morning-item" href="#morning">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>The Morning After</h3>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!--------------------------------------------MISTERIOSO CASO -------------------------------------------------------------->
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/EMC/EMC_POSTER.png" alt="..." />
-                        <a class="morning-item" href="#misterioso">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>The Mysterious Case of Marcos and Elficticio</h3>
-                                    <span>Original title: El Misterioso Caso de Marcos y Elficticio</span>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!--------------------------------------------THE DREAM -------------------------------------------------------------->
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/DREAM/DREAM.png" alt="..." />
-                        <a class="morning-item" href="#dream">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>The Dream</h3>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-------------------------------------------- CRIED WEREWOLF-------------------------------------------------------------->
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/WEREWOLF/werewolf.png" alt="..." />
-                        <a class="morning-item" href="#werewolf">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>The Girl Who Cried Werewolf</h3>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-------------------------------------------- COSMONUTA-------------------------------------------------------------->
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/COSMONAUTA/cosmo.png" alt="..." />
-                        <a class="morning-item" href="#cosmonauta">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>The Cosmonaut</h3>
-                                    <span>Original title: El Cosmonauta</span>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                 <!-------------------------------------------- DAVARION  -------------------------------------------------------------->
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/DAVARION/dav1.png" alt="..." />
-                        <a class="morning-item" href="#davarion">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>Davarion</h3>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                  <!-------------------------------------------- NUTCRACKER  -------------------------------------------------------------->
-                  <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/NUTCRAKER/nut2.png" alt="..." />
-                        <a class="morning-item" href="#nutcracker">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>Nutcracker: Nocturne</h3>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                 <!-------------------------------------------- CONDOTIERO  -------------------------------------------------------------->
-                 <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/CONDOTIERO/con1.png" alt="..." />
-                        <a class="morning-item" href="#condotiero">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>Il Condottiero</h3>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                 <!-------------------------------------------- TEARS  -------------------------------------------------------------->
-                 <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/TEARS/t1.png" alt="..." />
-                        <a class="morning-item" href="#tears">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>Tears in the Rain</h3>
-                                    <span>Original title: Lágrimas en la Lluvia</span>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-------------------------------------------- GALERIA -------------------------------------------------------------->
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div class="custom-portfolio-item position-relative">
-                        <img class="img-fluid" src="assets/img/GALLERY/gallery.png" alt="..." />
-                        <a class="morning-item" href="#gallery">
-                            <div class="custom-overlay">
-                                <div class="custom-overlay-content">
-                                    <h3>Other proyects</h3>
-                                    <span>Small games, designs and more!</span>
-                                    <p>Click to learn more</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="3">
+            <img src="assets/img/TMA/posterTMA.png" alt="TMA">
         </div>
-    </section>
-    <!------------------------------------------------- GALERIA DE PROYECTOS --------------------------------------------------------------->
-
-    <!---------------------------------------------------------THE MORNING AFTER ---------------------------------------------------------------------->
-
-    <section class="content-section text-black" id="morning">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="carousel-item active">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/7QN3X47l7Lc" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TMA/TMA_1.jpg" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>Made for the Global Game Jam 2024</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TMA/TMA_2.jpg" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TMA/TMA_3.jpg" alt="Workspace">
-                            </div>
-
-
-                        </div>
-                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>The Morning After</h2>
-                    </div>
-                    <div class="mb-1">
-                        <p>Satirical third-person shooter zombie game made for the 2024 edition of the Global Game Jam,
-                            with the
-                            theme 'Make me laugh.' In the development process, I served as a scriptwriter and dialogue
-                            editor, performed voice acting for the entire game, and utilized my talent as a designer to
-                            create covers, logos, backgrounds, and more. I was also responsible for the complete editing
-                            of the trailer, which is available on YouTube."</p>
-                    </div>
-
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNREAL ENGINE 5
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #242424;">
-                            <p class="text-center m-0">
-                                AUDACITY
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                ELEVENLABS
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                CAPCUT
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #000000;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light me-2 ms-2 mt-2" target="_blank"
-                            href="https://santiagomastroberti.itch.io/the-morning-after">Download Link </a>
-                        <a class="btn btn-light ms-2 me-2 mt-2" target="_blank" href="https://www.youtube.com/watch?v=7QN3X47l7Lc">Watch
-                            Trailer on Youtube</a>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="4">
+            <img src="assets/img/EMC/EMC_POSTER.png" alt="EMC">
         </div>
-    </section>
-
-    <!---------------------------------------------------------MISTERIOSO CASO  ----------------------------------------------------------------->
-
-    <section class="content-section text-black" id="misterioso">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-1">
-                        <h2>The Mysterious Case of Marcos and Elficticio</h2>
-                        <span>Original title: El Misterioso Caso de Marcos y Elficticio</span>
-                    </div>
-                    <div class="mb-1">
-                        <p>Led as the lead game designer for a youth mystery visual novel inspired by Robert Louis
-                            Stevenson's 'The Strange Case of Dr Jekyll and Mr Hyde.' Managed diverse tasks, including
-                            reading and adapting the classic, scripting the novel, and contributing to Game Design
-                            (worldbuilding, mechanics, pitching, documentation) and Production (team organization, task
-                            management).</p>
-                    </div>
-                    <div class="technologies-section mb-1">
-                        <div class="technology-box-secondary" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                RENPY ENGINE
-                            </p>
-                        </div>
-                        <div class="technology-box-secondary" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box-secondary" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                CELTX
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-light button-box" target="_blank"
-                            href="assets/docs/EL_MISTERIOSO_CASO_GUION_LITERARIO.pdf">Read the script (Spanish)</a>
-                    </div>
-
-                </div>
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="misteriosoCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/EMC/emc1.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>Adaptation from the classic Dr.Jekyll & Mr Hyde</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/EMC/emc2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/EMC/emc3.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#misteriosoCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#misteriosoCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="5">
+            <img src="assets/img/DREAM/DREAM.png" alt="Dream">
         </div>
-    </section>
-
-    <!--------------------------------------------------------- THE DREAM --------------------------------------------------------------->
-    <section class="content-section text-black" id="dream">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="dreamCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/DREAM/dream1.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>Top down 2D horror experience</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/DREAM/dream2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/DREAM/dream3.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/DREAM/dream4.png" alt="Workspace">
-                            </div>
-
-
-                        </div>
-                        <a class="carousel-control-prev" href="#dreamCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#dreamCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>The Dream</h2>
-                    </div>
-                    <div class="mb-1">
-                        <p>Led the production and served as the lead game designer for a short 2D top-down horror
-                            adventure with puzzle-solving elements. Took on multifaceted responsibilities, including
-                            narrative and level design, mechanics, pitching, and crafting the Game Design Document.
-                            Played a pivotal role in development, contributing significantly to programming and shaping
-                            the game's artistic direction</p>
-                    </div>
-
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNITY 3.16
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #242424;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                VISUAL STUDIO
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light mt-2" href="">Download Link</a>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="6">
+            <img src="assets/img/WEREWOLF/werewolf.png" alt="Werewolf">
         </div>
-    </section>
-
-    <!--------------------------------------------------- WHO CRIED WEREWOLF  ----------------------------------------------------------->
-
-    <section class="content-section text-black" id="werewolf">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>The Girl Who Cried Werewolf</h2>
-                    </div>
-                    <div class="mb-3">
-                        <p>Led UX/UI design for a 2D top-down horror adventure. Responsible for prototyping screens,
-                            crafting the logo, and designing the Wolf character with animations. Key contributions
-                            include shaping the game's core concept and influencing its artistic direction.</p>
-                    </div>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box-secondary" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box-secondary" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                ILLUSTRATOR
-                            </p>
-                        </div>
-                        <div class="technology-box-secondary" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                FIGMA
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light me-4 button-box" target="_blank" href="https://www.figma.com/file/cjxD9vQIhSqCceD6E2GsTX/WireFrame%2F-The_Girl_Who_Cried_Werewolf?type=design&node-id=0%3A1&mode=dev&t=rmw3d7QwCsu2CEj9-1
-                        ">Check all designs (Spanish)</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="werewolfCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/WEREWOLF/wolf1.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>Final designs for the game concept</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/WEREWOLF/wolf2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/WEREWOLF/wolf4.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/WEREWOLF/wolf5.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#werewolfCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#werewolfCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="7">
+            <img src="assets/img/COSMONAUTA/cosmo.png" alt="Cosmonauta">
         </div>
-    </section>
-
-    <!--------------------------------------------------------- EL COSMONAUTA --------------------------------------------------------->
-    <section class="content-section text-black" id="cosmonauta">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="cosmoCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/COSMONAUTA/cosmo.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>Concept Arts for the Game</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/COSMONAUTA/cosmo1.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/COSMONAUTA/cosmo2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/COSMONAUTA/cosmo3.png" alt="Workspace">
-                            </div>
-
-
-                        </div>
-                        <a class="carousel-control-prev" href="#cosmoCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#cosmoCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>The Cosmonaut</h2>
-                        <span>Original title: El Cosmonauta </span>
-                    </div>
-                    <div class="mb-1">
-                        <p>Design prototype for a 3D third-person shooter video game set in a space-themed futuristic
-                            sci-fi world. I took on the role of Lead Game Designer, overseeing tasks such as narrative
-                            conception, worldbuilding, game design document writing, mechanics conception, etc.
-                            Similarly, I took charge of a significant portion of the game's artistic aspects, designing
-                            the logo, posters, part of the conceptual art, and much more.</p>
-                    </div>
-
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                TRELLO
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #242424;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                ILLUSTRATOR
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #000000;">
-                            <p class="text-center m-0">
-                                GOOGLE DOCS
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light me-2 ms-2 mt-2" href="assets/docs/pitch_el_cosmonauta.pptx">The Game
-                            Pitch (Spanish)</a>
-                        <a class="btn btn-light me-2 ms-2 mt-2" target="_blank" href="assets/docs/game_treatment_el_cosmonauta.pdf">Game
-                            Design Document (Spanish)</a>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="8">
+            <img src="assets/img/DAVARION/dav1.png" alt="Davarion">
         </div>
-    </section>
-        <!------------------------------------------------------- DAVARION  -------------------------------------------------------------->
-
-    <section class="content-section text-black" id="davarion">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="davaCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/DAVARION/dav1.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>In-game captures</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/DAVARION/dav2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/DAVARION/dav2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/5nTsUOeRyOA?si=9tkb58T8mOL3apUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-
-
-                        </div>
-                        <a class="carousel-control-prev" href="#davaCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#davaCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>Davarion</h2>
-                    </div>
-                    <div class="mb-1">
-                        <p>Turn-based card combat game with live action cinematics. I took on the role of Lead Game Designer and Producer, overseeing tasks such as narrative
-                            conception,scriptwriting, worldbuilding, game design document writing, mechanics conception, etc.
-                            Similarly, I took charge of direction and prodcution of all cinematics in the game</p>
-                    </div>
-
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNITY 3.22
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #242424;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                TRELLO
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #000000;">
-                            <p class="text-center m-0">
-                                GOOGLE DOCS
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light me-2 ms-2 mt-2" href="https://eskaicito.itch.io/davarion" target="_blank">Download the Game</a>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="9">
+            <img src="assets/img/NUTCRAKER/nut2.png" alt="Nutcracker">
         </div>
-    </section>
-
-
-    <!------------------------------------------------------- NUTCRACKER  -------------------------------------------------------------->
-
-    <section class="content-section text-black" id="nutcracker">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="nutCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/NUTCRAKER/nut2.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>Development Captures</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/NUTCRAKER/nut1.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/NUTCRAKER/nu2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/NUTCRAKER/nut3.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/NUTCRAKER/nut4.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#nutCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#nutCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>Nutcracker: Nocturne</h2>
-                    </div>
-                    <div class="mb-1">
-                        <p>Souls-like prototype made in Unreal Engine 5, based on the famous ballet The Nutcracker by Tchaikovsky. In this project, I took the role of lead game designer,
-                            and got heavily involved in production, narrative, level design and documentation. Also, I made the 3D models for both the nutcracker and the enemies in the game, 
-                            the rats.
-                        </p>
-                    </div>
-
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNREAL ENGINE 5
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                BLENDER
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #000000;">
-                            <p class="text-center m-0">
-                                GOOGLE DOCS
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="10">
+            <img src="assets/img/CONDOTIERO/con1.png" alt="Condottiero">
         </div>
-    </section>
-
-      <!------------------------------------------------------- CONDOTIERO  -------------------------------------------------------------->
-
-      <section class="content-section text-black" id="condotiero">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="conCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/CONDOTIERO/con1.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>In-game captures</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/CONDOTIERO/con2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/CONDOTIERO/con3.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/CONDOTIERO/con4.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/u7nRUILH0Xc?si=5ZX2dGVll3y9ugep" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="carousel-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/qSHVGWHcFU4?si=Eu9Hrb7458Y06R6R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#conCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#conCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>Il Condottiero</h2>
-                    </div>
-                    <div class="mb-1">
-                        <p>Metroidvania prototype set in a baroque style world and live action cinematics. 
-                            Led the team as the producer and lead game designer. Worked in various areas, including narrative design, mechanic design and documentation.
-                            In additon, I served as the director, producer and scriptwriter for all cinematics.
-                        </p>
-                    </div>
-
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNITY 
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                VISUAL STUDIO 
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #000000;">
-                            <p class="text-center m-0">
-                                GOOGLE DOCS
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="11">
+            <img src="assets/img/TEARS/t1.png" alt="Tears">
         </div>
-    </section>
-
-     <!------------------------------------------------------- TEARS  -------------------------------------------------------------->
-
-     <section class="content-section text-black" id="tears">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-0 round-box">
-                <div class="col-lg-6 scroll-section " data-aos="fade-up">
-                    <div id="tearsCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/TEARS/t1.png" alt="Workspace">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p>Development and in game captures</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TEARS/t2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TEARS/t3.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TEARS/t4.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TEARS/t5.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/TEARS/t6.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/08y4dME4iFc?si=F4lkmac7odOKbGmJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-
-                        </div>
-                        <a class="carousel-control-prev" href="#tearsCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#tearsCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center scroll-section " data-aos="fade-up">
-                    <div class="mb-3">
-                        <h2>Tears in the Rain</h2>
-                        <span>Original title: Lágrimas en la LLuvia </span>
-                    </div>
-                    <div class="mb-1">
-                        <p>Walking Simulator experience stylized as in PS1, based on the 1982 sci fi classic Blade Runner. As a producer and lead game designer, I took responsability in all areas of design: 
-                            narrative design, mechanic design, and UX design. Also, was the developer of the first level of the game in its entirety, including illumination, assets, texturizing, etc
-                        </p>
-                    </div>
-
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNITY 
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                               PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #000000;">
-                            <p class="text-center m-0">
-                                GOOGLE DOCS
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail" data-slide="12">
+            <span>Gallery</span>
         </div>
-    </section>
+    </div>
 
-
-    <!------------------------------------------------------- GALERIA -------------------------------------------------------------->
-    <section class="content-section bg-primary text-white text-center" id="gallery">
-        <div class="container px-4 px-lg-5">
-            <div class="content-section-heading">
-                <h3 class="text-primary mb-0">Gallery</h3>
-                <h2 class="mb-5">A Collection of Designs and Small Adventures I Have Made</h2>
-            </div>
-            <div class="row gx-4 gx-lg-5">
-
-                <!--------------------------------------------------PRIMERA FILA------------------------------------------------------>
-
-                 <!-------------------------------------------------- SAKNES ------------------------------------------------------>
-                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 scroll-section " data-aos="fade-up">
-                    <div id="saknesCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/OTHER/saknes2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/saknes.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/saknes3.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#saknesCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#saknesCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h4><strong>Saknes</strong></h4>
-                    <p class="text-faded mb-0">2D platformer made for the Global Game Jam 2023. I was involved in game
-                        design and narrative design</p>
-                    <br>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNITY ENGINE
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                GAME DESIGNER
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                NARRATIVE DESIGN
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light" target="_blank" href="https://v3.globalgamejam.org/2023/games/saknes-9">Download
-                            Link</a>
-                    </div>
-
-                </div>
-
-                <!-------------------------------------------------- EVANDROS ------------------------------------------------------>
-
-                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 scroll-section " data-aos="fade-up">
-                    <div id="evandrosCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/OTHER/evandros3.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/evandros.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/evandros2.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#evandrosCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#evandrosCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h4><strong>Evandros Journey</strong></h4>
-                    <p class="text-faded mb-0">Small 3D prototype created as the final project for a game development
-                        course, inspired by Dante Alighieri's 'Divine Comedy. </p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                UNITY ENGINE
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252; ">
-                            <p class="text-center m-0">
-                                LEAD GAME DESIGN
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                LEAD ARTIST
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light" target="_blank" href="https://github.com/Eskaicito/finalproyectAlvarezSaldeno">Download
-                            Link</a>
-                    </div>
-                </div>
-
-            <!-------------------------------------------------- TRON  ------------------------------------------------------>
-
-                <div class="col-lg-4 col-md-6 mb-5 mb-md-0 scroll-section " data-aos="fade-up">
-                    <img src="assets/img/OTHER/tron.png" style="max-width: 100%;">
-                    <h4><strong>Arcade Shoot'Em Up</strong></h4>
-                    <p class="text-faded mb-0">
-                        2D arcade shoot'em up inspired by TRON and TRON:Legacy and games like Vampire Survivors
-                    </p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                P5.JS
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252; ">
-                            <p class="text-center m-0">
-                                PROGRAMMER
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                GAME DESIGNER
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light" target="_blank" href="https://editor.p5js.org/Eskaicito/sketches/uiBAEA5Zg">Try
-                            it</a>
-                    </div>
-                </div>
-
-                <!--------------------------------------------------SEGUNDA FILA------------------------------------------------------>
-
-                 <!-------------------------------------------------- NOUMENA   ------------------------------------------------------>
-                <div class="col-lg-4 col-md-6 mt-4 scroll-section " data-aos="fade-up">
-                    <img src="assets/img/OTHER/noumena_screen.png" style="max-width: 100%;">
-                    <h4><strong>Noumena</strong></h4>
-                    <p class="text-faded mb-0">"Logo proposal for a 2D platformer game titled 'Noumena'."</p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                ILLUSTRATOR
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-------------------------------------------------- LIBERTAS  ------------------------------------------------------>
-
-                <div class="col-lg-4 col-md-6 mt-4 scroll-section " data-aos="fade-up">
-                    <div id="veniceCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/VENICE/venice4.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/VENICE/venice5.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/VENICE/venice1.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/VENICE/venice2.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/VENICE/venice3.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/VENICE/venice6.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#veniceCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#veniceCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h4><strong>Tale of Libertas</strong></h4>
-                    <p class="text-faded mb-0">Designs crafted for the concept of an open-world RPG set in 15th-century
-                        Venice called "Tale of Libertas"</p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                LEAD ARTIST
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                ILLUSTRATOR
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-light" href="assets/docs/GDD Tale of Libertas.docx">Read the pitch (Spanish)</a>
-                    </div>
-                </div>
-
-                 <!-------------------------------------------------- SMART  ------------------------------------------------------>
-
-                <div class="col-lg-4 col-md-6 mt-4 scroll-section " data-aos="fade-up">
-                    <div id="monkeyCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/SM/smart_monkey_isologo_ALT.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/SM/smart_monkey_isologo_aLT_YELLOW.png"
-                                    alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/SM/smart_monkey_isologo_OTHER_aLT.png"
-                                    alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#monkeyCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#monkeyCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h4><strong>Smart Monkey</strong></h4>
-                    <p class="text-faded mb-0">"Logo proposal for a game company named 'Smart Monkey'."</p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                PHOTOSHOP
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                ILLUSTRATOR
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-------------------------------------------------- TERCERA FILA  ------------------------------------------------------>
-
-
-                 <!-------------------------------------------------- FEDE   ------------------------------------------------------>
-                 <div class="col-lg-4 col-md-6 mt-4 scroll-section " data-aos="fade-up">
-                    <div id="fedeCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/OTHER/fede.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/fede1.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/fede2.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#fedeCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#fedeCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h4><strong>Fede Mansion</strong></h4>
-                    <p class="text-faded mb-0">Top down puzzle prototype made with Unity 3D </p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                LEAD DESIGNER
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                PROGRAMMER
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                 <!-------------------------------------------------- PENGUIN  ------------------------------------------------------>
-
-                <div class="col-lg-4 col-md-6 mt-4 scroll-section " data-aos="fade-up">
-                    <div id="penguCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/OTHER/pengu.png" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/pengu1.png" alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#penguCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#penguCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h4><strong>Penguinvania</strong></h4>
-                    <p class="text-faded mb-0">Small arcade game made with SDL library</p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #558C9D;">
-                            <p class="text-center m-0">
-                                LEAD DESIGNER
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                PROGRAMMER
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-------------------------------------------------- BLENDER  ------------------------------------------------------>
-
-                <div class="col-lg-4 col-md-6 mt-4 scroll-section " data-aos="fade-up">
-                    <div id="blenderCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="assets/img/OTHER/render10warrior.jpg" alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/render12warrior.jpg"
-                                    alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/render2warrior.jpg"
-                                    alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/renderWarrior14.jpg"
-                                    alt="Workspace">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="assets/img/OTHER/renderWarrior16.jpg"
-                                    alt="Workspace">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#blenderCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#blenderCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h4><strong>Blender Project</strong></h4>
-                    <p class="text-faded mb-0">3D sci fi character. Texturized and Renderized in Blender </p>
-                    <div class="technologies-section mt-1 mb-3">
-                        <div class="technology-box" style="background-color: #B38252;">
-                            <p class="text-center m-0">
-                                BLENDER
-                            </p>
-                        </div>
-                        <div class="technology-box" style="background-color: #736251;">
-                            <p class="text-center m-0">
-                                ILLUSTRATOR
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                  <!-------------------------------------------------- CURRENT  ------------------------------------------------------>
-                <div class="container">
-                    <div class="text-center mb-4">
-                        <h2 class="fw-bold text-center mb-5">Currently in Development</h2>
-                            <p class="text-muted">Things I'm working on right now</p>
-                    </div>
-                  <div class="row">
-                        <div class="col-md-6 h-100 d-flex align-items-center justify-content-center scroll-section" data-aos="fade-up">
-                            <div class="w-100">
-                               <video controls style="max-width: 100%;">
-                                    <source src="assets/videos/AedoMenuVideo.mp4" type="video/mp4">
-                                </video>
-                               
-                                <p class="text-faded mb-0">"A detective point and click adventure with retro graphics"</p>
-                                <div class="technologies-section mt-1 mb-3">
-                                    <div class="technology-box" style="background-color: #558C9D;">
-                                        <p class="text-center m-0">UNITY 3D</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 h-100 d-flex align-items-center justify-content-center scroll-section" data-aos="fade-up">
-                            <div class="w-100">
-                                <img src="assets/img/OTHER/TBC.jpg" style="max-width: 100%;">
-                                <p class="text-faded mb-0">"Action adventure game with turn based combat and visual novel elements"</p>
-                                <div class="technologies-section mt-1 mb-3">
-                                    <div class="technology-box" style="background-color: #558C9D;">
-                                        <p class="text-center m-0">UNITY 3D</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer-->
-    <footer class="footer text-center" id="contact">
-        <div class="container px-4 px-lg-5 scroll-section " data-aos="fade-up">
-            <div class="text-secondary">
-                <h2>Contact me</h2>
-            </div>
-            <ul class="list-inline mb-5">
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3"  target="_blank"href="https://twitter.com/N7Bard"><i
-                            class="icon-social-twitter"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3"  target="_blank" href="https://www.linkedin.com/in/nicolas-salde%C3%B1o-ba8119206/"><i
-                            class="icon-social-linkedin"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white" target="_blank" href="https://github.com/Eskaicito"><i class="icon-social-github"></i></a>
-                </li>
-            </ul>
-            <p class="text-muted small mb-0">Copyright &copy; Nicolas Saldeño</p>
-        </div>
-    </footer>
-
-    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Scripts -->
     <script src="js/scripts.js"></script>
 </body>
-
 </html>
